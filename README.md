@@ -12,7 +12,7 @@ A showcase of how each single letter is cutted. Font "Blackie"
 	private final String a4 = " ▄▀▀▀▀█▄  "; private final String b4 = " ██    ██ "; private final String c4 = "▀█▄      ▄ ";
 	private final String a5 = "▄█▄  ▄██▄ "; private final String b5 = "▄██▄▄▄█▀  "; private final String c5 = " ▀▀█▄▄▄▄▀  ";
   
-  After the first line of the passed String is generated, the program continues to make the second line, third line, and so until all the containing letters are formed.
+  After the first line of the passed String is generated, the program continues to make the second line, third line, and so until all the containing letters are formed and presented as a single String.
 
 Note that in order to use MyConsoleFonts the encoding must be changed from default to UTF-8. (Due to Java sometimes having trouble recognizing some ASCII chars)
 
