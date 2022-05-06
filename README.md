@@ -13,3 +13,8 @@ A showcase of how each single letter is cutted. Font "Blackie"
 	private final String a5 = "▄█▄  ▄██▄ "; private final String b5 = "▄██▄▄▄█▀  "; private final String c5 = " ▀▀█▄▄▄▄▀  ";
   
   After the first line of the passed String is generated, the program continues to make the second line, third line, and so until all the containing letters are formed.
+
+Note that in order to use MyConsoleFonts the encoding must be changed from default to UTF-8. 
+This can be done by going to:
+
+Window -> Preferences -> General -> Content Types -> Text and in Default Encoding we must write: UTF-8
