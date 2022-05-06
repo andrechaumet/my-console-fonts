@@ -14,8 +14,8 @@ A showcase of how each single letter is cutted. Font "Blackie"
   
   After the first line of the passed String is generated, the program continues to make the second line, third line, and so until all the containing letters are formed and presented as a single String.
 
-Note that in order to use MyConsoleFonts the encoding must be changed from default to UTF-8. (Due to Java sometimes having trouble recognizing some ASCII chars)
+Note that in order to use MyConsoleFonts the encoding must be changed from default to UTF-8. (Due to Java sometimes causing trouble recognizing some ASCII chars)
 
-This can be done by going to:
+On Eclipse(Java) this can be accomplished by following the ensuing instructions on:
 
 Window -> Preferences -> General -> Content Types -> Text and in Default Encoding we must write: UTF-8
