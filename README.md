@@ -1,5 +1,5 @@
 # MyConsoleFonts
-MyConsoleFonts is a font generator that will return you the same String converted to a giant font (up to 8 console lines) of your own choice. Useful for people who are looking to develop their own console game involving ASCII drawings.
+MyConsoleFonts is a project that I made from scratch. It's a font generator that will return you the same String converted to a giant font (up to 8 console lines) of your own choice. Useful for people who are looking to develop their own console game involving ASCII drawings.
 
 Currently, MyConsoleFonts contains 5 different fonts. Each one of this fonts has been reorganized by it's letters which had to be splitted line by line into pieces in order 
 to display letter by letter on the console, forming whichever words or phrases of your own choice. 
