@@ -1,7 +1,8 @@
-import java.util.HashMap;
-import java.util.Map;
+package v2;
 
-public class TestFontGenerator {
+import java.util.HashMap;
+
+public class TestFont extends Font {
 
     private final String[] A_LETTER_ROWS = new String[]{
             " ▄▄▄▄▄▄  ",
@@ -237,35 +238,38 @@ public class TestFontGenerator {
             "█ █▄▄▄▄▄  ",
             "█▄▄▄▄▄▄▄█ "};
 
-    Map<Character, String[]> lettersMap;
+    public TestFont(int amountOfRows) {
+        super(amountOfRows);
+    }
+
     //TODO: force by constructor to choose and implement only and only one row amount for all letters/chars
     private void createFontMatrixMap() {
-        lettersMap = new HashMap<>();
-        lettersMap.put('A', A_LETTER_ROWS);
-        lettersMap.put('B', B_LETTER_ROWS);
-        lettersMap.put('C', C_LETTER_ROWS);
-        lettersMap.put('D', D_LETTER_ROWS);
-        lettersMap.put('E', E_LETTER_ROWS);
-        lettersMap.put('F', F_LETTER_ROWS);
-        lettersMap.put('G', G_LETTER_ROWS);
-        lettersMap.put('H', H_LETTER_ROWS);
-        lettersMap.put('I', I_LETTER_ROWS);
-        lettersMap.put('J', J_LETTER_ROWS);
-        lettersMap.put('K', K_LETTER_ROWS);
-        lettersMap.put('L', L_LETTER_ROWS);
-        lettersMap.put('M', M_LETTER_ROWS);
-        lettersMap.put('N', N_LETTER_ROWS);
-        lettersMap.put('O', O_LETTER_ROWS);
-        lettersMap.put('P', P_LETTER_ROWS);
-        lettersMap.put('Q', Q_LETTER_ROWS);
-        lettersMap.put('R', R_LETTER_ROWS);
-        lettersMap.put('S', S_LETTER_ROWS);
-        lettersMap.put('T', T_LETTER_ROWS);
-        lettersMap.put('U', U_LETTER_ROWS);
-        lettersMap.put('V', V_LETTER_ROWS);
-        lettersMap.put('W', W_LETTER_ROWS);
-        lettersMap.put('X', X_LETTER_ROWS);
-        lettersMap.put('Y', Y_LETTER_ROWS);
-        lettersMap.put('Z', Z_LETTER_ROWS);
+        super.charactersMap = new HashMap<>();
+        charactersMap.put('A', A_LETTER_ROWS);
+        charactersMap.put('B', B_LETTER_ROWS);
+        charactersMap.put('C', C_LETTER_ROWS);
+        charactersMap.put('D', D_LETTER_ROWS);
+        charactersMap.put('E', E_LETTER_ROWS);
+        charactersMap.put('F', F_LETTER_ROWS);
+        charactersMap.put('G', G_LETTER_ROWS);
+        charactersMap.put('H', H_LETTER_ROWS);
+        charactersMap.put('I', I_LETTER_ROWS);
+        charactersMap.put('J', J_LETTER_ROWS);
+        charactersMap.put('K', K_LETTER_ROWS);
+        charactersMap.put('L', L_LETTER_ROWS);
+        charactersMap.put('M', M_LETTER_ROWS);
+        charactersMap.put('N', N_LETTER_ROWS);
+        charactersMap.put('O', O_LETTER_ROWS);
+        charactersMap.put('P', P_LETTER_ROWS);
+        charactersMap.put('Q', Q_LETTER_ROWS);
+        charactersMap.put('R', R_LETTER_ROWS);
+        charactersMap.put('S', S_LETTER_ROWS);
+        charactersMap.put('T', T_LETTER_ROWS);
+        charactersMap.put('U', U_LETTER_ROWS);
+        charactersMap.put('V', V_LETTER_ROWS);
+        charactersMap.put('W', W_LETTER_ROWS);
+        charactersMap.put('X', X_LETTER_ROWS);
+        charactersMap.put('Y', Y_LETTER_ROWS);
+        charactersMap.put('Z', Z_LETTER_ROWS);
     }
 }
