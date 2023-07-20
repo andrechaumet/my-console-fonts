@@ -9,7 +9,7 @@ public class FontWriter<T extends Font> {
         StringBuilder result = new StringBuilder("\n");
         for(int rowNumber = 0; rowNumber < font.getAmountOfRows(); rowNumber++) {
             for(char stringCharacter : stringCharacters) {
-                result.append(obtainFragment(stringCharacter, rowNumber));
+                result.append(obtainCharFragment(stringCharacter, rowNumber));
             }
             result.append("\n");
         }
@@ -21,8 +21,8 @@ public class FontWriter<T extends Font> {
         System.out.println(generateText(text));
     }
 
-    private String obtainFragment(char character, int rowNumber) {
-        return font.getCharFragment(character, rowNumber);
+    private String obtainCharFragment(char character, int rowNumber) {
+        return font.getCharRowFragment(character, rowNumber);
     }
 
 }

@@ -16,7 +16,7 @@ public abstract class Font {
         return charactersMap.get(character);
     }
 
-    public String getCharFragment(char character, int rowNumber) {
+    public String getCharRowFragment(char character, int rowNumber) {
         return charactersMap.get(character)[rowNumber];
     }
 

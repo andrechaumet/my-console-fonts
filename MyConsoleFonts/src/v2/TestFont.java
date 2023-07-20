@@ -242,8 +242,8 @@ public class TestFont extends Font {
         super(amountOfRows);
     }
 
-    //TODO: force by constructor to choose and implement only and only one row amount for all letters/chars
-    private void createFontMatrixMap() {
+    //TODO: force by constructor to choose and implement only and only one row length for all letters/chars
+    private void createFontMap() {
         super.charactersMap = new HashMap<>();
         charactersMap.put('A', A_LETTER_ROWS);
         charactersMap.put('B', B_LETTER_ROWS);
