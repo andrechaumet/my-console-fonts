@@ -1,13 +1,18 @@
 package v2;
+/*
 
 public class FontWriter<T extends Font> {
 
     T font;
 
+    public FontWriter() {
+        font = new T();
+    }
+
     public String generateText(String text) {
         char[] stringCharacters = text.toCharArray();
         StringBuilder result = new StringBuilder("\n");
-        for(int rowNumber = 0; rowNumber < font.getAmountOfRows(); rowNumber++) {
+        for(int rowNumber = 0; rowNumber < 5; rowNumber++) {
             for(char stringCharacter : stringCharacters) {
                 result.append(obtainCharFragment(stringCharacter, rowNumber));
             }
@@ -24,5 +29,5 @@ public class FontWriter<T extends Font> {
     private String obtainCharFragment(char character, int rowNumber) {
         return font.getCharRowFragment(character, rowNumber);
     }
-
 }
+*/

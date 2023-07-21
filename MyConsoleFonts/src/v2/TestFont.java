@@ -1,10 +1,13 @@
 package v2;
 
-import java.util.HashMap;
+import java.util.Map;
 
-public class TestFont extends Font {
+public final class TestFont extends Font {
 
-    private final String[] A_LETTER_ROWS = new String[]{
+    //Map<Character, String[]> charactersMap2 = Map.of('A', A_LETTER_ROWS);
+
+    private static final String[] A_LETTER_ROWS = new String[]{
+            "A",
             " ▄▄▄▄▄▄  ",
             "█      █ ",
             "█  ▄   █ ",
@@ -13,7 +16,8 @@ public class TestFont extends Font {
             "█  ▄   █ ",
             "█▄█ █▄▄█ "};
 
-    private final String[] B_LETTER_ROWS = new String[]{
+    private static final String[] B_LETTER_ROWS = new String[]{
+            "B",
             " ▄▄▄▄▄▄▄  ",
             "█  ▄    █ ",
             "█ █▄█   █ ",
@@ -22,7 +26,7 @@ public class TestFont extends Font {
             "█ █▄█   █ ",
             "█▄▄▄▄▄▄▄█ "};
 
-    private final String[] C_LETTER_ROWS = new String[]{
+    private static final String[] C_LETTER_ROWS = new String[]{
             " ▄▄▄▄▄▄▄  ",
             "█       █ ",
             "█       █ ",
@@ -31,7 +35,7 @@ public class TestFont extends Font {
             "█    █▄▄  ",
             "█▄▄▄▄▄▄▄█ "};
 
-    private final String[] D_LETTER_ROWS = new String[]{
+    private static final String[] D_LETTER_ROWS = new String[]{
             " ▄▄▄▄▄▄   ",
             "█      █  ",
             "█  ▄    █ ",
@@ -40,7 +44,7 @@ public class TestFont extends Font {
             "█       █ ",
             "█▄▄▄▄▄▄█  "};
 
-    private final String[] E_LETTER_ROWS = new String[]{
+    private static final String[] E_LETTER_ROWS = new String[]{
             " ▄▄▄▄▄▄▄  ",
             "█       █ ",
             "█    ▄▄▄█ ",
@@ -49,7 +53,7 @@ public class TestFont extends Font {
             "█   █▄▄▄  ",
             "█▄▄▄▄▄▄▄█ "};
 
-    private final String[] F_LETTER_ROWS = new String[]{
+    private static final String[] F_LETTER_ROWS = new String[]{
             " ▄▄▄▄▄▄▄  ",
             "█       █ ",
             "█    ▄▄▄█ ",
@@ -58,7 +62,7 @@ public class TestFont extends Font {
             "█   █     ",
             "█▄▄▄█     "};
 
-    private final String[] G_LETTER_ROWS = new String[]{
+    private static final String[] G_LETTER_ROWS = new String[]{
             " ▄▄▄▄▄▄▄  ",
             "█       █ ",
             "█   ▄▄▄▄█ ",
@@ -67,7 +71,7 @@ public class TestFont extends Font {
             "█  █▄▄█ █ ",
             "█▄▄▄▄▄▄▄█ "};
 
-    private final String[] H_LETTER_ROWS = new String[]{
+    private static final String[] H_LETTER_ROWS = new String[]{
             " ▄▄   ▄▄  ",
             "█  █ █  █ ",
             "█  █▄█  █ ",
@@ -76,7 +80,7 @@ public class TestFont extends Font {
             "█  █ █  █ ",
             "█▄▄█ █▄▄█ "};
 
-    private final String[] I_LETTER_ROWS = new String[]{
+    private static final String[] I_LETTER_ROWS = new String[]{
             " ▄▄▄  ",
             "█   █ ",
             "█   █ ",
@@ -85,7 +89,7 @@ public class TestFont extends Font {
             "█   █ ",
             "█▄▄▄█ "};
 
-    private final String[] J_LETTER_ROWS = new String[]{
+    private static final String[] J_LETTER_ROWS = new String[]{
             "     ▄▄▄  ",
             "    █   █ ",
             "    █   █ ",
@@ -94,7 +98,7 @@ public class TestFont extends Font {
             "█       █ ",
             "█▄▄▄▄▄▄▄█ "};
 
-    private final String[] K_LETTER_ROWS = new String[]{
+    private static final String[] K_LETTER_ROWS = new String[]{
             " ▄▄▄   ▄  ",
             "█   █ █ █ ",
             "█   █▄█ █ ",
@@ -103,7 +107,7 @@ public class TestFont extends Font {
             "█    ▄  █ ",
             "█▄▄▄█ █▄█ "};
 
-    private final String[] L_LETTER_ROWS = new String[]{
+    private static final String[] L_LETTER_ROWS = new String[]{
             " ▄▄▄      ",
             "█   █     ",
             "█   █     ",
@@ -112,7 +116,7 @@ public class TestFont extends Font {
             "█       █ ",
             "█▄▄▄▄▄▄▄█ "};
 
-    private final String[] M_LETTER_ROWS = new String[]{
+    private static final String[] M_LETTER_ROWS = new String[]{
             " ▄▄   ▄▄  ",
             "█  █▄█  █ ",
             "█       █ ",
@@ -121,7 +125,7 @@ public class TestFont extends Font {
             "█ ██▄██ █ ",
             "█▄█   █▄█ "};
 
-    private final String[] N_LETTER_ROWS = new String[]{
+    private static final String[] N_LETTER_ROWS = new String[]{
             " ▄▄    ▄  ",
             "█  █  █ █ ",
             "█   █▄█ █ ",
@@ -130,7 +134,7 @@ public class TestFont extends Font {
             "█ █ █   █ ",
             "█▄█  █▄▄█ "};
 
-    private final String[] O_LETTER_ROWS = new String[]{
+    private static final String[] O_LETTER_ROWS = new String[]{
             " ▄▄▄▄▄▄▄  ",
             "█       █ ",
             "█   ▄   █ ",
@@ -139,7 +143,7 @@ public class TestFont extends Font {
             "█       █ ",
             "█▄▄▄▄▄▄▄█ "};
 
-    private final String[] P_LETTER_ROWS = new String[]{
+    private static final String[] P_LETTER_ROWS = new String[]{
             " ▄▄▄▄▄▄▄  ",
             "█       █ ",
             "█    ▄  █ ",
@@ -148,7 +152,7 @@ public class TestFont extends Font {
             "█   █     ",
             "█▄▄▄█     "};
 
-    private final String[] Q_LETTER_ROWS = new String[]{
+    private static final String[] Q_LETTER_ROWS = new String[]{
             " ▄▄▄▄▄▄▄  ",
             "█       █ ",
             "█   ▄   █ ",
@@ -157,7 +161,7 @@ public class TestFont extends Font {
             "█      █  ",
             "█▄▄▄▄██▄█ "};
 
-    private final String[] R_LETTER_ROWS = new String[]{
+    private static final String[] R_LETTER_ROWS = new String[]{
             " ▄▄▄▄▄▄    ",
             "█   ▄  █   ",
             "█  █ █ █   ",
@@ -166,7 +170,7 @@ public class TestFont extends Font {
             "█   █  █ █ ",
             "█▄▄▄█  █▄█ "};
 
-    private final String[] S_LETTER_ROWS = new String[]{
+    private static final String[] S_LETTER_ROWS = new String[]{
             " ▄▄▄▄▄▄▄  ",
             "█       █ ",
             "█  ▄▄▄▄▄█ ",
@@ -175,7 +179,7 @@ public class TestFont extends Font {
             " ▄▄▄▄▄█ █ ",
             "█▄▄▄▄▄▄▄█ "};
 
-    private final String[] T_LETTER_ROWS = new String[]{
+    private static final String[] T_LETTER_ROWS = new String[]{
             " ▄▄▄▄▄▄▄  ",
             "█       █ ",
             "█▄     ▄█ ",
@@ -184,7 +188,7 @@ public class TestFont extends Font {
             "  █   █   ",
             "  █▄▄▄█   "};
 
-    private final String[] U_LETTER_ROWS = new String[]{
+    private static final String[] U_LETTER_ROWS = new String[]{
             " ▄▄   ▄▄  ",
             "█  █ █  █ ",
             "█  █ █  █ ",
@@ -193,7 +197,7 @@ public class TestFont extends Font {
             "█       █ ",
             "█▄▄▄▄▄▄▄█ "};
 
-    private final String[] V_LETTER_ROWS = new String[]{
+    private static final String[] V_LETTER_ROWS = new String[]{
             " ▄▄   ▄▄  ",
             "█  █ █  █ ",
             "█  █▄█  █ ",
@@ -202,7 +206,7 @@ public class TestFont extends Font {
             " █     █  ",
             "  █▄▄▄█   "};
 
-    private final String[] W_LETTER_ROWS = new String[]{
+    private static final String[] W_LETTER_ROWS = new String[]{
             " ▄     ▄  ",
             "█ █ ▄ █ █ ",
             "█ ██ ██ █ ",
@@ -211,7 +215,7 @@ public class TestFont extends Font {
             "█   ▄   █ ",
             "█▄▄█ █▄▄█ "};
 
-    private final String[] X_LETTER_ROWS = new String[]{
+    private static final String[] X_LETTER_ROWS = new String[]{
             " ▄▄   ▄▄  ",
             "█  █▄█  █ ",
             "█       █ ",
@@ -220,7 +224,7 @@ public class TestFont extends Font {
             "█   ▄   █ ",
             "█▄▄█ █▄▄█ "};
 
-    private final String[] Y_LETTER_ROWS = new String[]{
+    private static final String[] Y_LETTER_ROWS = new String[]{
             " ▄▄   ▄▄  ",
             "█  █ █  █ ",
             "█  █▄█  █ ",
@@ -229,7 +233,7 @@ public class TestFont extends Font {
             "  █   █   ",
             "  █▄▄▄█   "};
 
-    private final String[] Z_LETTER_ROWS = new String[]{
+    private static final String[] Z = new String[]{
             " ▄▄▄▄▄▄▄  ",
             "█       █ ",
             "█▄▄▄▄   █ ",
@@ -238,13 +242,12 @@ public class TestFont extends Font {
             "█ █▄▄▄▄▄  ",
             "█▄▄▄▄▄▄▄█ "};
 
-    public TestFont(int amountOfRows) {
-        super(amountOfRows);
-    }
+    private Map<Character, String[]> charactersMap;
+    private final int AMOUNT_OF_CHARS = 26;
+    private final int AMOUNT_OF_ROWS = 7;
 
-    //TODO: force by constructor to choose and implement only and only one row length for all letters/chars
-    private void createFontMap() {
-        super.charactersMap = new HashMap<>();
+    public TestFont() {
+        Z.getClass().getFields();
         charactersMap.put('A', A_LETTER_ROWS);
         charactersMap.put('B', B_LETTER_ROWS);
         charactersMap.put('C', C_LETTER_ROWS);
@@ -270,6 +273,21 @@ public class TestFont extends Font {
         charactersMap.put('W', W_LETTER_ROWS);
         charactersMap.put('X', X_LETTER_ROWS);
         charactersMap.put('Y', Y_LETTER_ROWS);
-        charactersMap.put('Z', Z_LETTER_ROWS);
+        charactersMap.put('Z', Z);
     }
+
+    @Override
+    public String getCharRowFragment(char characterKey, int rowNumber) {
+        return charactersMap.get(characterKey)[rowNumber];
+    }
+
+    /*@Override
+    public int getAmountOfChars() {
+        return AMOUNT_OF_CHARS;
+    }
+
+    @Override
+    public int getAmountOfRows() {
+        return AMOUNT_OF_ROWS;
+    }*/
 }
