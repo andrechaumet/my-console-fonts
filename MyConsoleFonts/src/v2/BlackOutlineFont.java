@@ -1,6 +1,6 @@
 package v2;
 
-public final class TestFont extends Font {
+public final class BlackOutlineFont extends Font {
 
     private static final String[][] FONT_CHARS_MATRIX = new String[][]{
             {"A",
@@ -248,7 +248,7 @@ public final class TestFont extends Font {
                     "   "
             }};
 
-    public TestFont() {
+    public BlackOutlineFont() {
         super(FONT_CHARS_MATRIX, FONT_CHARS_MATRIX[0].length);
     }
 }
