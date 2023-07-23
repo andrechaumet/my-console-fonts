@@ -1,4 +1,4 @@
-package v2;
+package v2.fonts;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,17 +10,25 @@ public abstract class Font {
 
     public Font(String[][] fontCharsMatrix, int amountOfRows) {
         CHARACTERS_MAP = new HashMap<>(fontCharsMatrix.length);
-        final int MINUS_CHAR_KEY_STORE_SPACE = -1;
+        final int MINUS_CHAR_KEY_STORE_SPACE = - 1;
         AMOUNT_OF_ROWS = amountOfRows + MINUS_CHAR_KEY_STORE_SPACE;
         mapCharactersDesigns(fontCharsMatrix);
     }
 
     private void mapCharactersDesigns(String[][] fontCharsMatrix) {
-        for (String[] charRowsArray : fontCharsMatrix) {
+       /* for (String[] charRowsArray : fontCharsMatrix) {
             Character charKey = charRowsArray[0].toUpperCase().charAt(0);
             String[] charValues = new String[AMOUNT_OF_ROWS];
-            System.arraycopy(charRowsArray, 1, charValues, 0, charValues.length);
+            System.arraycopy(charRowsArray, 0, charValues, 0, AMOUNT_OF_ROWS);
             CHARACTERS_MAP.put(charKey, charValues);
+        }*/
+        for (String[] rowsArray : fontCharsMatrix) {
+            Character charKey = rowsArray[0].toUpperCase().charAt(0);
+            String[] stringValues = new String[AMOUNT_OF_ROWS];
+            for (int currentCharRow = 0; currentCharRow < stringValues.length; currentCharRow++) {
+                stringValues[currentCharRow] = rowsArray[currentCharRow + 1];
+            }
+            CHARACTERS_MAP.put(charKey, stringValues);
         }
     }
 
@@ -30,6 +38,7 @@ public abstract class Font {
     }
 
     //TODO: Not char key found exception handling
+    //TODO: Shouldn't have toUpperCase ?? maybe add "diffByMayusOn" boolean?
     public String[] getCharFragments(char character) {
         return CHARACTERS_MAP.get(Character.toUpperCase(character));
     }
