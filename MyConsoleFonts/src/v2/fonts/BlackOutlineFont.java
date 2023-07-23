@@ -1,4 +1,4 @@
-package v2;
+package v2.fonts;
 
 public final class BlackOutlineFont extends Font {
 

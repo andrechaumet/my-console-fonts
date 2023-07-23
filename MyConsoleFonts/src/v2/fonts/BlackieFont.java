@@ -1,4 +1,4 @@
-package v2;
+package v2.fonts;
 
 public class BlackieFont extends Font {
 
@@ -192,8 +192,6 @@ public class BlackieFont extends Font {
                     "   ",
                     "   ",
                     "   ",
-                    "   ",
-                    "   "
             }};
 
     public BlackieFont() {
