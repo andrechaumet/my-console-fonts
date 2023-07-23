@@ -238,6 +238,6 @@ public final class TestFont extends Font {
                     "█▄▄▄▄▄▄▄█ "}};
 
     public TestFont() {
-        this.generateFontMap(FONT_CHARS_MATRIX, FONT_CHARS_MATRIX[0].length << 1);
+        super(FONT_CHARS_MATRIX, FONT_CHARS_MATRIX[0].length);
     }
 }

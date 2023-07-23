@@ -5,13 +5,12 @@ import java.util.Map;
 
 public abstract class Font {
 
-   private Map<Character, String[]> charactersMap;
+   private final Map<Character, String[]> charactersMap;
 
-
-   public void generateFontMap(String[][] fontCharsMatrix, int amountOfRows) {
-       charactersMap = new HashMap<>(amountOfRows);
+   public Font(String[][] fontCharsMatrix, int amountOfRows) {
+       charactersMap = new HashMap<>(fontCharsMatrix.length);
        for (String[] rowsArray : fontCharsMatrix) {
-           Character charKey = rowsArray[0].charAt(0);
+           Character charKey = rowsArray[0].toUpperCase().charAt(0);
            String[] stringValues = new String[amountOfRows];
            for (int currentCharRow = 1; currentCharRow < stringValues.length; currentCharRow++) {
                stringValues[currentCharRow] = rowsArray[currentCharRow];
@@ -19,4 +18,13 @@ public abstract class Font {
            charactersMap.put(charKey, stringValues);
        }
    }
+
+   public String getCharFragment(char character, int rowNumber) {
+       return charactersMap.get(Character.toUpperCase(character))[rowNumber];
+   }
+
+   public int getAmountOfChars() {
+       return charactersMap.size();
+   }
+
 }
