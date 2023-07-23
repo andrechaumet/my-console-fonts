@@ -1,19 +1,22 @@
 package v2;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Font {
 
-    public Map<Character, String[]> charactersMap;
+   private Map<Character, String[]> charactersMap;
 
-    private int AMOUNT_OF_CHARS;
-    private int AMOUNT_OF_ROWS;
 
-    public String getCharRowFragment(char character, int rowNumber) {
-        return charactersMap.get(character)[rowNumber];
-    }
-
-    public String[] getCharRows(char character) {
-        return charactersMap.get(character);
-    }
+   public void generateFontMap(String[][] fontCharsMatrix, int amountOfRows) {
+       charactersMap = new HashMap<>(amountOfRows);
+       for (String[] rowsArray : fontCharsMatrix) {
+           Character charKey = rowsArray[0].charAt(0);
+           String[] stringValues = new String[amountOfRows];
+           for (int currentCharRow = 1; currentCharRow < stringValues.length; currentCharRow++) {
+               stringValues[currentCharRow] = rowsArray[currentCharRow];
+           }
+           charactersMap.put(charKey, stringValues);
+       }
+   }
 }

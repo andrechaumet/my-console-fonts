@@ -270,24 +270,24 @@ public final class TestFont extends Font {
                     "█ █▄▄▄▄▄  ",
                     "█▄▄▄▄▄▄▄█ "}};
 
-    private Map<Character, String[]> charactersMap;
-    //private final int AMOUNT_OF_CHARS = 26;
-    private final int AMOUNT_OF_ROWS = 7;
-
     public TestFont() {
-        charactersMap = new HashMap<>();
+        this.generateFontMap(FONT_CHARS_MATRIX, );
+    /*    int AMOUNT_OF_ROWS = 7;
+        charactersMap = new HashMap<>(AMOUNT_OF_ROWS);
         for (String[] fontCharsMatrix : FONT_CHARS_MATRIX) {
             Character charKey = fontCharsMatrix[0].charAt(0);
             String[] stringValues = new String[AMOUNT_OF_ROWS];
-            System.arraycopy(fontCharsMatrix, 0, stringValues, 0, stringValues.length);
+            for (int currentCharRow = 1; currentCharRow < stringValues.length; currentCharRow++) {
+                stringValues[currentCharRow] = fontCharsMatrix[currentCharRow];
+            }
             charactersMap.put(charKey, stringValues);
-        }
+        }*/
     }
 
-    @Override
+    /*@Override
     public String getCharRowFragment(char characterKey, int rowNumber) {
         return charactersMap.get(characterKey)[rowNumber];
-    }
+    }*/
 
     /*@Override
     public int getAmountOfChars() {

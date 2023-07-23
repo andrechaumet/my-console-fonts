@@ -1,5 +1,4 @@
 package v2;
-/*
 
 public class FontWriter<T extends Font> {
 
@@ -30,4 +29,3 @@ public class FontWriter<T extends Font> {
         return font.getCharRowFragment(character, rowNumber);
     }
 }
-*/
