@@ -235,7 +235,18 @@ public final class TestFont extends Font {
                     " ▄▄▄▄█  █ ",
                     "█ ▄▄▄▄▄▄█ ",
                     "█ █▄▄▄▄▄  ",
-                    "█▄▄▄▄▄▄▄█ "}};
+                    "█▄▄▄▄▄▄▄█ "},
+
+            {
+                    " ",
+                    "   ",
+                    "   ",
+                    "   ",
+                    "   ",
+                    "   ",
+                    "   ",
+                    "   "
+            }};
 
     public TestFont() {
         super(FONT_CHARS_MATRIX, FONT_CHARS_MATRIX[0].length);
