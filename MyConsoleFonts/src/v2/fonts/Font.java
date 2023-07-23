@@ -16,12 +16,6 @@ public abstract class Font {
     }
 
     private void mapCharactersDesigns(String[][] fontCharsMatrix) {
-       /* for (String[] charRowsArray : fontCharsMatrix) {
-            Character charKey = charRowsArray[0].toUpperCase().charAt(0);
-            String[] charValues = new String[AMOUNT_OF_ROWS];
-            System.arraycopy(charRowsArray, 0, charValues, 0, AMOUNT_OF_ROWS);
-            CHARACTERS_MAP.put(charKey, charValues);
-        }*/
         for (String[] rowsArray : fontCharsMatrix) {
             Character charKey = rowsArray[0].toUpperCase().charAt(0);
             String[] stringValues = new String[AMOUNT_OF_ROWS];
