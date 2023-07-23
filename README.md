@@ -4,7 +4,7 @@ MyConsoleFonts is a project that I made from scratch. It's a font generator that
 Currently, MyConsoleFonts contains 5 different fonts. Each one of this fonts has been reorganized by it's letters which had to be splitted line by line into pieces in order 
 to display letter by letter on the console, forming whichever words or phrases of your own choice. 
 
-A showcase of how each single letter is cutted. Font "Blackie"
+A showcase of how each single letter is cut. Font "Blackie"
 
 	private final String a1 = "    █     "; private final String b1 = "▀██▀▀█▄   "; private final String c1 = "▄▄█▀▀▀▄█   ";
 	private final String a2 = "   ███    "; private final String b2 = " ██   ██  "; private final String c2 = "▄█▀     ▀  ";
