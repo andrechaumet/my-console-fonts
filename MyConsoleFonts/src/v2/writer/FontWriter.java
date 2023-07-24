@@ -16,15 +16,21 @@ public class FontWriter {
 
     public String generateText(String text) {
         char[] stringCharacters = text.toCharArray();
-        //StringBuilder result = new StringBuilder("\n");
-        String result = "";
-        for (int rowNumber = 0; rowNumber < font.getAmountOfRowsPerChar(); rowNumber++) {
+        int amountOfRows = font.getAmountOfRowsPerChar();
+        //TODO: Calculate required stack memory for result String
+        //TODO: Create sub methods for this crap
+        StringBuilder result = new StringBuilder(calculateRequiredHeapSpace(text));
+        for (int rowNumber = 0; rowNumber < amountOfRows; rowNumber++) {
             for (char stringCharacter : stringCharacters) {
-                result += obtainCharFragment(stringCharacter, rowNumber);
+                result.append(obtainCharFragment(stringCharacter, rowNumber));
             }
-            result += "\n";
+            result.append("\n");
         }
-        return result.toString();
+        return result.toString().toString();
+    }
+
+    private int calculateRequiredHeapSpace(String requiredText) {
+        return this.font.getAmountOfRowsPerChar() * requiredText.length();
     }
 
     public void writeText(String text) {
