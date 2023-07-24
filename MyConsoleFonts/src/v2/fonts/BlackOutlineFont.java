@@ -249,6 +249,6 @@ public final class BlackOutlineFont extends Font {
             }};
 
     public BlackOutlineFont() {
-        super(FONT_CHARS_MATRIX, FONT_CHARS_MATRIX[0].length);
+        super(FONT_CHARS_MATRIX);
     }
 }

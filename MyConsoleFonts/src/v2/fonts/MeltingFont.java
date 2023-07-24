@@ -276,6 +276,6 @@ public class MeltingFont extends Font {
             }};
 
     public MeltingFont() {
-        super(FONT_CHARS_MATRIX, FONT_CHARS_MATRIX[0].length);
+        super(FONT_CHARS_MATRIX);
     }
 }

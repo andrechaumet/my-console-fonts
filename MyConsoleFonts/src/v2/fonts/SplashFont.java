@@ -194,6 +194,6 @@ public class SplashFont extends Font {
         }};
 
         public SplashFont() {
-            super(FONT_CHARS_MATRIX, 6);
+            super(FONT_CHARS_MATRIX);
         }
 }
