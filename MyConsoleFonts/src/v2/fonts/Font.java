@@ -8,14 +8,28 @@ public abstract class Font {
     private final Map<Character, String[]> CHARACTERS_MAP;
     private final int AMOUNT_OF_ROWS;
 
-    public Font(String[][] fontCharsMatrix, int amountOfRows) {
+    public Font(String[][] fontCharsMatrix) {
         CHARACTERS_MAP = new HashMap<>(fontCharsMatrix.length);
-        final int MINUS_CHAR_KEY_STORE_SPACE = - 1;
-        AMOUNT_OF_ROWS = amountOfRows + MINUS_CHAR_KEY_STORE_SPACE;
-        mapCharactersDesigns(fontCharsMatrix);
+        AMOUNT_OF_ROWS = calculateAmountOfRows(fontCharsMatrix);
+        mapFontDesigns(fontCharsMatrix);
     }
 
-    private void mapCharactersDesigns(String[][] fontCharsMatrix) {
+/*    //TODO: Receive multiple, adjunt as one, -> mapFontDesigns();
+    public Font(String[][]... fontCharsMatrix) {
+        //CHARACTERS_MAP = new HashMap<>(Arrays.stream(fontCharsMatrix).map(matrix -> Integer.valueOf(matrix.length)));
+        AtomicReference<Integer> test = new AtomicReference<>(0);
+        Arrays.stream(fontCharsMatrix).forEach(matrix -> test.updateAndGet(v -> v + matrix.length));
+        CHARACTERS_MAP = new HashMap<>(test.get());
+    }*/
+
+/*    public Font(String[][]... fontCharsMatrix) {
+        //CHARACTERS_MAP = new HashMap<>(Arrays.stream(fontCharsMatrix).map(matrix -> Integer.valueOf(matrix.length)));
+        AtomicReference<Integer> test = new AtomicReference<>(0);
+        Arrays.stream(fontCharsMatrix).forEach(matrix -> test.updateAndGet(v -> v + matrix.length));
+        CHARACTERS_MAP = new HashMap<>(test.get());
+    }*/
+
+    private void mapFontDesigns(String[][] fontCharsMatrix) {
         for (String[] rowsArray : fontCharsMatrix) {
             Character charKey = rowsArray[0].toUpperCase().charAt(0);
             String[] stringValues = new String[AMOUNT_OF_ROWS];
@@ -26,10 +40,20 @@ public abstract class Font {
         }
     }
 
+    private int calculateAmountOfRows(String[][] fontCharsMatrix) {
+        final int minusKeyStoreSpace = - 1;
+        return fontCharsMatrix[0].length + minusKeyStoreSpace;
+    }
+
     //TODO: Not char key found exception handling
     public String getCharFragment(char character, int rowNumber) {
         return CHARACTERS_MAP.get(Character.toUpperCase(character))[rowNumber];
     }
+
+    //TODO:
+/*    private String[][] matrixUnifier(String[][]... matrix) {
+        return null;
+    }*/
 
     //TODO: Not char key found exception handling
     //TODO: Shouldn't have toUpperCase ?? maybe add "diffByMayusOn" boolean?
