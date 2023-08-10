@@ -26,7 +26,7 @@ public class FontWriter {
             }
             result.append("\n");
         }
-        return result.toString().toString();
+        return result.toString();
     }
 
     private int calculateRequiredHeapSpace(String requiredText) {

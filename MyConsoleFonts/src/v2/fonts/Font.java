@@ -8,26 +8,29 @@ public abstract class Font {
     private final Map<Character, String[]> CHARACTERS_MAP;
     private final int AMOUNT_OF_ROWS;
 
+    //TODO: Create " public String [][] unifyMatrices(String[][]..., String[][])"
+    // to start coupling them as they go up
+
     public Font(String[][] fontCharsMatrix) {
         CHARACTERS_MAP = new HashMap<>(fontCharsMatrix.length);
         AMOUNT_OF_ROWS = calculateAmountOfRows(fontCharsMatrix);
         mapFontDesigns(fontCharsMatrix);
     }
 
-/*    //TODO: Receive multiple, adjunt as one, -> mapFontDesigns();
-    public Font(String[][]... fontCharsMatrix) {
-        //CHARACTERS_MAP = new HashMap<>(Arrays.stream(fontCharsMatrix).map(matrix -> Integer.valueOf(matrix.length)));
-        AtomicReference<Integer> test = new AtomicReference<>(0);
-        Arrays.stream(fontCharsMatrix).forEach(matrix -> test.updateAndGet(v -> v + matrix.length));
-        CHARACTERS_MAP = new HashMap<>(test.get());
-    }*/
+    public Font(String[][]... fontCharsMatrices) {
+        CHARACTERS_MAP = new HashMap<>(countAmountOfChars(fontCharsMatrices));
+        //TODO: Overwrite kinda style
+        AMOUNT_OF_ROWS = fontCharsMatrices[0][0].length - 1;
+        mapFontDesigns(fontCharsMatrices);
+    }
 
-/*    public Font(String[][]... fontCharsMatrix) {
-        //CHARACTERS_MAP = new HashMap<>(Arrays.stream(fontCharsMatrix).map(matrix -> Integer.valueOf(matrix.length)));
-        AtomicReference<Integer> test = new AtomicReference<>(0);
-        Arrays.stream(fontCharsMatrix).forEach(matrix -> test.updateAndGet(v -> v + matrix.length));
-        CHARACTERS_MAP = new HashMap<>(test.get());
-    }*/
+    private int countAmountOfChars(String[][]... fontCharsMatrices) {
+        int amountOfChars = 0;
+        for (String[][] matrix : fontCharsMatrices) {
+            amountOfChars += matrix.length;
+        }
+        return amountOfChars;
+    }
 
     private void mapFontDesigns(String[][] fontCharsMatrix) {
         for (String[] rowsArray : fontCharsMatrix) {
@@ -40,9 +43,22 @@ public abstract class Font {
         }
     }
 
+    private void mapFontDesigns(String[][]... fontCharsMatrices) {
+        for (String[][] fontsArray : fontCharsMatrices) {
+            for (String[] rowsArray : fontsArray) {
+                Character charKey = rowsArray[0].toUpperCase().charAt(0);
+                String[] stringValues = new String[AMOUNT_OF_ROWS];
+                for (int currentCharRow = 0; currentCharRow < stringValues.length; currentCharRow++) {
+                    stringValues[currentCharRow] = rowsArray[currentCharRow + 1];
+                }
+                CHARACTERS_MAP.put(charKey, stringValues);
+            }
+        }
+    }
+
     private int calculateAmountOfRows(String[][] fontCharsMatrix) {
-        final int minusKeyStoreSpace = - 1;
-        return fontCharsMatrix[0].length + minusKeyStoreSpace;
+        final int MINUS_KEY_STORE_SPACE = -1;
+        return fontCharsMatrix[0].length + MINUS_KEY_STORE_SPACE;
     }
 
     //TODO: Not char key found exception handling
@@ -69,3 +85,4 @@ public abstract class Font {
         return CHARACTERS_MAP.size();
     }
 }
+
