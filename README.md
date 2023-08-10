@@ -5,6 +5,7 @@ Currently, MyConsoleFonts contains 5 native different fonts. Each one of this fo
 to display letter by letter on the console, forming whichever words or phrases of your own choice. 
 
 A brief showcase of how an output would look as console characters. Font "Blackie"
+````
 
     █     ▀█▄   ▀█▀ ▀██▀▀█▄   ▀██▀ ▀█▀   
    ███     █▀█   █   ██   ██    ██ █     
@@ -12,4 +13,4 @@ A brief showcase of how an output would look as console characters. Font "Blacki
  ▄▀▀▀▀█▄   █   ███   ██    ██    ██      
 ▄█▄  ▄██▄ ▄█▄   ▀█  ▄██▄▄▄█▀    ▄██▄     
 
-
+````
