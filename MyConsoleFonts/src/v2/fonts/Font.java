@@ -11,20 +11,20 @@ public abstract class Font {
     //TODO: Create " public String [][] unifyMatrices(String[][]..., String[][])"
     // to start coupling them as they go up
 
-    public Font(String[][] fontCharsMatrix) {
+    public Font(final String[][] fontCharsMatrix) {
         CHARACTERS_MAP = new HashMap<>(fontCharsMatrix.length);
         AMOUNT_OF_ROWS = calculateAmountOfRows(fontCharsMatrix);
         mapFontDesigns(fontCharsMatrix);
     }
 
-    public Font(String[][]... fontCharsMatrices) {
+    public Font(final String[][]... fontCharsMatrices) {
         CHARACTERS_MAP = new HashMap<>(countAmountOfChars(fontCharsMatrices));
-        //TODO: Overwrite kinda style
+        //TODO: Overwrite and write it more descriptive
         AMOUNT_OF_ROWS = fontCharsMatrices[0][0].length - 1;
         mapFontDesigns(fontCharsMatrices);
     }
 
-    private int countAmountOfChars(String[][]... fontCharsMatrices) {
+    private int countAmountOfChars(final String[][]... fontCharsMatrices) {
         int amountOfChars = 0;
         for (String[][] matrix : fontCharsMatrices) {
             amountOfChars += matrix.length;
@@ -32,18 +32,16 @@ public abstract class Font {
         return amountOfChars;
     }
 
-    private void mapFontDesigns(String[][] fontCharsMatrix) {
+    private void mapFontDesigns(final String[][] fontCharsMatrix) {
         for (String[] rowsArray : fontCharsMatrix) {
             Character charKey = rowsArray[0].toUpperCase().charAt(0);
             String[] stringValues = new String[AMOUNT_OF_ROWS];
-            for (int currentCharRow = 0; currentCharRow < stringValues.length; currentCharRow++) {
-                stringValues[currentCharRow] = rowsArray[currentCharRow + 1];
-            }
+            System.arraycopy(rowsArray, 1, stringValues, 0, stringValues.length);
             CHARACTERS_MAP.put(charKey, stringValues);
         }
     }
 
-    private void mapFontDesigns(String[][]... fontCharsMatrices) {
+    private void mapFontDesigns(final String[][]... fontCharsMatrices) {
         for (String[][] fontsArray : fontCharsMatrices) {
             for (String[] rowsArray : fontsArray) {
                 Character charKey = rowsArray[0].toUpperCase().charAt(0);
@@ -56,13 +54,13 @@ public abstract class Font {
         }
     }
 
-    private int calculateAmountOfRows(String[][] fontCharsMatrix) {
+    private int calculateAmountOfRows(final String[][] fontCharsMatrix) {
         final int MINUS_KEY_STORE_SPACE = -1;
         return fontCharsMatrix[0].length + MINUS_KEY_STORE_SPACE;
     }
 
     //TODO: Not char key found exception handling
-    public String getCharFragment(char character, int rowNumber) {
+    public String getCharFragment(final char character, final int rowNumber) {
         return CHARACTERS_MAP.get(Character.toUpperCase(character))[rowNumber];
     }
 
@@ -73,7 +71,7 @@ public abstract class Font {
 
     //TODO: Not char key found exception handling
     //TODO: Shouldn't have toUpperCase ?? maybe add "diffByMayusOn" boolean?
-    public String[] getCharFragments(char character) {
+    public String[] getCharFragments(final char character) {
         return CHARACTERS_MAP.get(Character.toUpperCase(character));
     }
 

@@ -10,34 +10,35 @@ public class FontWriter {
     public FontWriter() {
     }
 
-    public FontWriter(Font font) {
+    public FontWriter(final Font font) {
         this.font = font;
     }
 
-    public String generateText(String text) {
-        char[] stringCharacters = text.toCharArray();
-        int amountOfRows = font.getAmountOfRowsPerChar();
-        //TODO: Calculate required stack memory for result String
+    public String generateText(final String text) {
+        final char[] stringCharacters = text.toCharArray();
+        final int amountOfRows = font.getAmountOfRowsPerChar();
+        final String nextLine = "\n";
+        //TODO: Calculate required stack/heap memory for result String
         //TODO: Create sub methods for this crap
-        StringBuilder result = new StringBuilder(calculateRequiredHeapSpace(text));
+        final StringBuilder result = new StringBuilder(calculateRequiredHeapSpace(text));
         for (int rowNumber = 0; rowNumber < amountOfRows; rowNumber++) {
             for (char stringCharacter : stringCharacters) {
                 result.append(obtainCharFragment(stringCharacter, rowNumber));
             }
-            result.append("\n");
+            result.append(nextLine);
         }
         return result.toString();
     }
 
-    private int calculateRequiredHeapSpace(String requiredText) {
+    private int calculateRequiredHeapSpace(final String requiredText) {
         return this.font.getAmountOfRowsPerChar() * requiredText.length();
     }
 
-    public void writeText(String text) {
+    public void writeText(final String text) {
         System.out.println(generateText(text));
     }
 
-    private String obtainCharFragment(char character, int rowNumber) {
+    private String obtainCharFragment(final char character, final int rowNumber) {
         return font.getCharFragment(character, rowNumber);
     }
 
@@ -45,7 +46,7 @@ public class FontWriter {
         return font;
     }
 
-    public void setFont(Font font) {
+    public void setFont(final Font font) {
         this.font = font;
     }
 }
