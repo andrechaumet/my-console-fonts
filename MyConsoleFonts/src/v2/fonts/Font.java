@@ -3,6 +3,12 @@ package v2.fonts;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * <head>This class handles common Fonts hierarchy mapping logic.</head>
+ * @author André Chaumet - github.com/andrechc
+ * @version 0.1
+ * @since 20th July 2023
+ */
 public abstract class Font {
 
     private final Map<Character, String[]> CHARACTERS_MAP;
@@ -33,7 +39,7 @@ public abstract class Font {
     }
 
     private void mapFontDesigns(final String[][] fontCharsMatrix) {
-        for (String[] rowsArray : fontCharsMatrix) {
+        for (final String[] rowsArray : fontCharsMatrix) {
             Character charKey = rowsArray[0].toUpperCase().charAt(0);
             String[] stringValues = new String[AMOUNT_OF_ROWS];
             System.arraycopy(rowsArray, 1, stringValues, 0, stringValues.length);
@@ -42,13 +48,11 @@ public abstract class Font {
     }
 
     private void mapFontDesigns(final String[][]... fontCharsMatrices) {
-        for (String[][] fontsArray : fontCharsMatrices) {
-            for (String[] rowsArray : fontsArray) {
+        for (final String[][] fontsArray : fontCharsMatrices) {
+            for (final String[] rowsArray : fontsArray) {
                 Character charKey = rowsArray[0].toUpperCase().charAt(0);
                 String[] stringValues = new String[AMOUNT_OF_ROWS];
-                for (int currentCharRow = 0; currentCharRow < stringValues.length; currentCharRow++) {
-                    stringValues[currentCharRow] = rowsArray[currentCharRow + 1];
-                }
+                System.arraycopy(rowsArray, 1, stringValues, 0, stringValues.length);
                 CHARACTERS_MAP.put(charKey, stringValues);
             }
         }
@@ -65,7 +69,7 @@ public abstract class Font {
     }
 
     //TODO:
-/*    private String[][] matrixUnifier(String[][]... matrix) {
+/*    private String[][] matrixUnifier(String[][]... matrices) {
         return null;
     }*/
 

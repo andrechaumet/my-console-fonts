@@ -2,6 +2,12 @@ package v2.writer;
 
 import v2.fonts.Font;
 
+/**
+ * <head>This class converts text requests to the loaded font chars.</head>
+ * @author André Chaumet - github.com/andrechc
+ * @version 0.1
+ * @since 20th July 2023
+ */
 public class FontWriter {
 
     private Font font;
