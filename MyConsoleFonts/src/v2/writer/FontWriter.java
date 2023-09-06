@@ -1,5 +1,6 @@
 package v2.writer;
 
+import v2.exception.NoFontLoadedException;
 import v2.fonts.Font;
 
 /**
@@ -21,6 +22,7 @@ public class FontWriter {
     }
 
     public String generateText(final String text) {
+        failIfNoFontIsLoaded();
         final char[] stringCharacters = text.toCharArray();
         final int amountOfRows = font.getAmountOfRowsPerChar();
         final String nextLine = "\n";
@@ -34,6 +36,12 @@ public class FontWriter {
             result.append(nextLine);
         }
         return result.toString();
+    }
+
+    private void failIfNoFontIsLoaded() {
+        if(font == null) {
+            throw new NoFontLoadedException();
+        }
     }
 
     private int calculateRequiredHeapSpace(final String requiredText) {
