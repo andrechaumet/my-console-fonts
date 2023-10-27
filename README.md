@@ -1,7 +1,7 @@
 # my-console-fonts
-MyConsoleFonts is a tool designed for generating custom console fonts from input strings. It transforms the input string into a sizable console using ASCII characters.
-A brief showcase of how a console output would look as. 
+MyConsoleFonts is a tool for transforming plain string values into a wide range of unique typographical styles. It's primarily designed for improving text presentation in terminals and simplifying console logging. This versatile tool adds creative flair to your text, making it visually appealing and memorable.
 
+MyConsoleFonts showcase:
 Font "Blackie".
 ````
     █     ▀█▄   ▀█▀ ▀██▀▀█▄   ▀██▀ ▀█▀    ▀██ ▀██▀  ▀█▀     █      ▄█▀▀▀▄█     ▀██▀  ▀██▀ ▀██▀▀▀▀█  ▀██▀▀█▄   ▀██▀▀▀▀█  
