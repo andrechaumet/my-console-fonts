@@ -1,7 +1,7 @@
-package v2.writer;
+package writer;
 
-import v2.exception.NoFontLoadedException;
-import v2.fonts.Font;
+import exception.NoFontLoadedException;
+import font.Font;
 
 /**
  * <head>This class converts text requests to the loaded font chars.</head>
@@ -13,7 +13,6 @@ public class FontWriter {
 
     private Font font;
 
-    //TODO: Support empty FontWriter $ add EmptyWriterException (no font loaded)
     public FontWriter() {
     }
 
@@ -26,8 +25,6 @@ public class FontWriter {
         final char[] stringCharacters = text.toCharArray();
         final int amountOfRows = font.getAmountOfRowsPerChar();
         final String nextLine = "\n";
-        //TODO: Calculate required stack/heap memory for result String
-        //TODO: Create sub methods for this crap
         final StringBuilder result = new StringBuilder(calculateRequiredHeapSpace(text));
         for (int rowNumber = 0; rowNumber < amountOfRows; rowNumber++) {
             for (char stringCharacter : stringCharacters) {

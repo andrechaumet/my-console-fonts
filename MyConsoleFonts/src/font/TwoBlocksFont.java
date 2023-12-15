@@ -1,4 +1,4 @@
-package v2.fonts;
+package font;
 
 public class TwoBlocksFont extends Font {
     private static final String[][] FONT_CHARS_MATRIX = new String[][]{
@@ -115,7 +115,7 @@ public class TwoBlocksFont extends Font {
         super(FONT_CHARS_MATRIX);
     }
 
-    //TODO: Support multiple inherited fonts
+    //TODO: Support multiple inherited font
     protected TwoBlocksFont(String[][]... fontCharsMatrix) {
         super(FONT_CHARS_MATRIX, fontCharsMatrix[0]);
     }

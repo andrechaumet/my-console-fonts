@@ -1,8 +1,7 @@
-package v2.fonts;
+package font;
 
 public class TwoBlocksSpanishFont extends TwoBlocksFont {
 
-    //TODO: Figure it out ¿)
     private static final String[][] FONT_CHARS_MATRIX_TEST = new String[][]{
             {"Ñ",
                     "█▄▀█ ",

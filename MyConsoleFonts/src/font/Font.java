@@ -1,6 +1,6 @@
-package v2.fonts;
+package font;
 
-import v2.exception.NoSuchKeyException;
+import exception.NoSuchKeyException;
 
 import java.util.HashMap;
 import java.util.Map;

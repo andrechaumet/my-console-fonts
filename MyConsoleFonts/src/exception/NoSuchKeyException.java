@@ -1,4 +1,4 @@
-package v2.exception;
+package exception;
 
 public class NoSuchKeyException extends MyConsoleFontsException {
 }

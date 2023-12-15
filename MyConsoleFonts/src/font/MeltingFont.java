@@ -1,4 +1,4 @@
-package v2.fonts;
+package font;
 
 public class MeltingFont extends Font {
 
