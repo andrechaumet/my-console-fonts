@@ -8,6 +8,6 @@ public class TwoBlocksSpanishFont extends TwoBlocksFont {
                     "█ ▀█ "}};
 
     public TwoBlocksSpanishFont() {
-        super(FONT_CHARS_MATRIX_TEST);
+        super(false, FONT_CHARS_MATRIX_TEST);
     }
 }

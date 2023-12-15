@@ -112,11 +112,10 @@ public class TwoBlocksFont extends Font {
             }};
 
     public TwoBlocksFont() {
-        super(FONT_CHARS_MATRIX);
+        super(false, FONT_CHARS_MATRIX);
     }
 
-    //TODO: Support multiple inherited font
-    protected TwoBlocksFont(String[][]... fontCharsMatrix) {
-        super(FONT_CHARS_MATRIX, fontCharsMatrix[0]);
+    protected TwoBlocksFont(final Boolean caseSensitive, final String[][]... fontCharsMatrix) {
+        super(false, FONT_CHARS_MATRIX, fontCharsMatrix[0]);
     }
 }

@@ -19,23 +19,21 @@ public abstract class Font {
 
     private final Map<Character, String[]> CHARACTERS_MAP;
     private final int AMOUNT_OF_ROWS_PER_CHAR;
+    private final Boolean CASE_SENSISTIVE;
 
-    //TODO: Create " public String [][] unifyMatrices(String[][]..., String[][])"
-    // to start coupling them as they go up
-
-    protected Font(final String[][] fontCharsMatrix) {
+    protected Font(final Boolean caseSensistive, final String[][] fontCharsMatrix) {
         CHARACTERS_MAP = new HashMap<>(fontCharsMatrix.length);
         AMOUNT_OF_ROWS_PER_CHAR = calculateAmountOfRows(fontCharsMatrix);
+        CASE_SENSISTIVE = caseSensistive;
         mapFontDesigns(fontCharsMatrix);
     }
 
-    protected Font(final String[][]... fontCharsMatrices) {
+    protected Font(final Boolean caseSensistive, final String[][]... fontCharsMatrices) {
+        CASE_SENSISTIVE = caseSensistive;
         CHARACTERS_MAP = new HashMap<>(countAmountOfChars(fontCharsMatrices));
-        //TODO: Write it more descriptive
         AMOUNT_OF_ROWS_PER_CHAR = calculateExpectedRowsPerChar(fontCharsMatrices);
         mapFontDesigns(fontCharsMatrices);
     }
-
 
     private void mapFontDesigns(final String[][] fontCharsMatrix) {
         for (final String[] rowsArray : fontCharsMatrix) {

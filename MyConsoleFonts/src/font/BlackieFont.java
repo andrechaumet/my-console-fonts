@@ -195,6 +195,6 @@ public class BlackieFont extends Font {
             }};
 
     public BlackieFont() {
-        super(FONT_CHARS_MATRIX);
+        super(false, FONT_CHARS_MATRIX);
     }
 }
