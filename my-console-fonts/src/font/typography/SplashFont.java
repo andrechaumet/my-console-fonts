@@ -1,4 +1,6 @@
-package font;
+package font.typography;
+
+import font.Font;
 
 public class SplashFont extends Font {
 

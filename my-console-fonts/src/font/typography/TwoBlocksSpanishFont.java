@@ -1,4 +1,4 @@
-package font;
+package font.typography;
 
 public class TwoBlocksSpanishFont extends TwoBlocksFont {
 

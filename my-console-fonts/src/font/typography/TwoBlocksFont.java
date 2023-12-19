@@ -1,4 +1,6 @@
-package font;
+package font.typography;
+
+import font.Font;
 
 public class TwoBlocksFont extends Font {
     private static final String[][] FONT_CHARS_MATRIX = new String[][]{

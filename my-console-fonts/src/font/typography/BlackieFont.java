@@ -1,4 +1,6 @@
-package font;
+package font.typography;
+
+import font.Font;
 
 public class BlackieFont extends Font {
 
