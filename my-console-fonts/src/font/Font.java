@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * <head>This class handles common Fonts hierarchy mapping logic.</head>
  *
- * @author André Chaumet - github.com/andrechc
+ * @author André Chaumet - github.com/andrechaumet
  * @version 0.1
  * @since 20th July 2023
  */
@@ -18,27 +18,27 @@ public abstract class Font {
     private static final int CHAR_KEY_LENGTH_POSITION = 0;
 
     private final Map<Character, String[]> CHARACTERS_MAP;
-    private final int AMOUNT_OF_ROWS_PER_CHAR;
-    private final Boolean CASE_SENSISTIVE;
+    private final int ROWS_PER_CHAR;
+    private final Boolean CASE_SENSITIVE;
 
-    protected Font(final Boolean caseSensistive, final String[][] fontCharsMatrix) {
+    protected Font(final Boolean caseSensitive, final String[][] fontCharsMatrix) {
+        CASE_SENSITIVE = caseSensitive;
         CHARACTERS_MAP = new HashMap<>(fontCharsMatrix.length);
-        AMOUNT_OF_ROWS_PER_CHAR = calculateAmountOfRows(fontCharsMatrix);
-        CASE_SENSISTIVE = caseSensistive;
+        ROWS_PER_CHAR = calculateAmountOfRows(fontCharsMatrix);
         mapFontDesigns(fontCharsMatrix);
     }
 
-    protected Font(final Boolean caseSensistive, final String[][]... fontCharsMatrices) {
-        CASE_SENSISTIVE = caseSensistive;
+    protected Font(final Boolean caseSensitive, final String[][]... fontCharsMatrices) {
+        CASE_SENSITIVE = caseSensitive;
         CHARACTERS_MAP = new HashMap<>(countAmountOfChars(fontCharsMatrices));
-        AMOUNT_OF_ROWS_PER_CHAR = calculateExpectedRowsPerChar(fontCharsMatrices);
+        ROWS_PER_CHAR = calculateExpectedRowsPerChar(fontCharsMatrices);
         mapFontDesigns(fontCharsMatrices);
     }
 
     private void mapFontDesigns(final String[][] fontCharsMatrix) {
         for (final String[] rowsArray : fontCharsMatrix) {
             Character charKey = rowsArray[CHAR_KEY_POSITION].charAt(CHAR_KEY_LENGTH_POSITION);
-            String[] stringValues = new String[AMOUNT_OF_ROWS_PER_CHAR];
+            String[] stringValues = new String[ROWS_PER_CHAR];
             System.arraycopy(rowsArray, 1, stringValues, 0, stringValues.length);
             CHARACTERS_MAP.put(charKey, stringValues);
         }
@@ -69,7 +69,7 @@ public abstract class Font {
 
     public String getCharFragment(final char character, final int rowNumber) {
         final String fragment = CHARACTERS_MAP.get(character)[rowNumber];
-        if(fragment == null) {
+        if (fragment == null) {
             throw new NoSuchKeyException();
         }
         return fragment;
@@ -77,14 +77,14 @@ public abstract class Font {
 
     public String[] getCharFragments(final char character) {
         final String[] fragments = CHARACTERS_MAP.get(character);
-        if(fragments == null) {
+        if (fragments == null) {
             throw new NoSuchKeyException();
         }
         return fragments;
     }
 
     public int getAmountOfRowsPerChar() {
-        return AMOUNT_OF_ROWS_PER_CHAR;
+        return ROWS_PER_CHAR;
     }
 
     public int getAmountOfChars() {
